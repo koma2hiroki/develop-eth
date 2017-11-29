@@ -5,8 +5,14 @@ _「コントラクト開発するわけではないけど、開発環境をロ�
 
 という方へのまとめ。
 
+1. [環境](https://github.com/koma2hiroki/develop-eth#環境)
+1. [インストール](https://github.com/koma2hiroki/develop-eth#インストール)
+1. [疎通確認](https://github.com/koma2hiroki/develop-eth#疎通確認)
 
-# 環境 for Mac
+
+# 1. 環境
+
+for Mac
 
 ##### homebrew
 MacOS用パッケージ管理ツールです。
@@ -29,11 +35,11 @@ node.jsで必要なライブラリが簡単にインストール出来ます。
 
 https://github.com/trufflesuite/truffle
 
-巷の記事だと、「まずはgethをインストール」のような流れになっていますが、
+他の記事だと「まずはgethをインストール」のような流れになっていますが、
 現状(ver4.0.1)ではtruffleによってある程度の機能が提供されているのでgethをインストールする必要はありません。
 
 
-# インストール
+# 2. インストール
 
 ※ node.jsをインストールされている方は「truffle」のみインストールしてください。
 
@@ -83,7 +89,7 @@ $ truffle version
 ```
 
 
-# 疎通確認
+# 3. 疎通確認
 
 truffleを使ったコントラクト疎通確認の流れです。
 
