@@ -1,0 +1,9 @@
+
+.DS_Store
+
+# contract
+contract/build
+
+# node.js
+node.js/package-lock.json
+node.js/node_modules

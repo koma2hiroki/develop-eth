@@ -1,0 +1,10 @@
+{
+  "name": "develop-eth",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "author": "koma2hiroki",
+  "dependencies": {
+    "web3": "^0.20.2"
+  }
+}
