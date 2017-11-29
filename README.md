@@ -1,13 +1,13 @@
 
 非Etherumエンジニアのための、スマートコントラクト開発環境作成方法です。
 
-_「コントラクト開発するわけではないけど、開発環境をローカルに立てたい・・・！」_
+_「コントラクトの開発するわけではないけど、開発環境をローカルに立てたい・・・！」_
 
 という方へのまとめ。
 
-1. [環境](https://github.com/koma2hiroki/develop-eth#環境)
-1. [インストール](https://github.com/koma2hiroki/develop-eth#インストール)
-1. [疎通確認](https://github.com/koma2hiroki/develop-eth#疎通確認)
+1. [環境](https://github.com/koma2hiroki/develop-eth#1-環境)
+1. [インストール](https://github.com/koma2hiroki/develop-eth#2-インストール)
+1. [疎通確認](https://github.com/koma2hiroki/develop-eth#3-疎通確認)
 
 
 # 1. 環境
@@ -31,12 +31,12 @@ node.jsで必要なライブラリが簡単にインストール出来ます。
 ##### truffle
 コントラクト開発のためのフレームワークです。
 
-開発環境構築、ビルド/デプロイなどコントラクト開発のためのツールが詰まっています。
+開発を手助けするフレームワーク以外に、ビルド/デプロイなどコントラクト開発のためのツールが詰まっています。
 
 https://github.com/trufflesuite/truffle
 
 他の記事だと「まずはgethをインストール」のような流れになっていますが、
-現状(ver4.0.1)ではtruffleによってある程度の機能が提供されているのでgethをインストールする必要はありません。
+現状(ver4.0.1)ではtruffleによって「テスト環境」機能が提供されているのでgethをインストールする必要はありません。
 
 
 # 2. インストール
@@ -113,8 +113,12 @@ node.jsを使っています。
 
 #### コントラクタ側
 
-truffleをdevelopモードで立ち上げるとアカウントが勝手に10個作られます。
-また、コントラクタ開発環境が「 http://localhost:9545/ 」で立ち上がります。
+##### developモード
+truffleのdevelopモードを使って、スマートコントラクトのテスト環境を立ち上げます。
+
+URLは「 http://localhost:9545/ 」になります。
+
+(また、アカウントが勝手に10個作られます。)
 
 ```
 # コントラクトプロジェクトに移動
@@ -138,8 +142,11 @@ Accounts:
 Mnemonic: candy maple cake sugar pudding cream honey rich smooth crumble sweet treat
 ```
 
-次にtruffleのdevelopモードにてmigrateします。
-(migrateは、イーサリアム環境にソースをアップするような認識でいます。。。本当はどうなんだろう)
+##### migrate
+truffleのdevelop上でmigrateを行います。
+
+migrateを行うと、イーサリアム環境(今回はテスト環境)にコンパイルしたソースをアップし、スマートコントラクトとの接続ができるようになります。
+(そんな認識ですが本当はどうなんだろう)
 
 ```
 truffle(develop)> migrate
@@ -150,7 +157,6 @@ Using network 'develop'.
 
 Network up to date.
 ```
-
 Solidityのコンパイルが走り「contract/build/contracts/Sample.json」が作られれば成功です。
 
 Sample.jsonは, Sample.solのAPI仕様書(?)のようなものです。
